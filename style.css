@@ -1,47 +1,21 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+function clearDisplay() {
+    document.getElementById('display').value = '';
 }
 
-.container {
-    max-width: 500px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+function deleteLast() {
+    const display = document.getElementById('display');
+    display.value = display.value.slice(0, -1);
 }
 
-h1 {
-    text-align: center;
-    margin-bottom: 20px;
+function appendToDisplay(value) {
+    document.getElementById('display').value += value;
 }
 
-.inputs {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-input {
-    width: 45%;
-    padding: 8px;
-    font-size: 16px;
-}
-
-.buttons {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
-}
-
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.result {
-    text-align: center;
-    font-size: 18px;
+function calculateResult() {
+    const display = document.getElementById('display');
+    try {
+        display.value = eval(display.value);
+    } catch (e) {
+        display.value = 'Error';
+    }
 }
