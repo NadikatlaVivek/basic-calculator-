@@ -1,18 +1,59 @@
-function calculate(operation) {
-    const input1 = document.getElementById("input1").value;
-    const input2 = document.getElementById("input2").value;
-    let result;
-    
-    //TODO: uncomment the following code, and validate the numbers are not empty
-    // if (input1 === "" || input2 === "") {
-    //     alert("Please enter both numbers.");
-    //     return;
-    // }
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
 
-    const num1 = parseFloat(input1);
-    const num2 = parseFloat(input2);
-    //TODO: your code here, add the 2 numbers
-    
+.calculator {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
-    document.getElementById("result").textContent = result;
+#display {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: right;
+    padding-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    padding: 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #f1f1f1;
+}
+
+button:hover {
+    background-color: #ddd;
+}
+
+.equals {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.equals:hover {
+    background-color: #45a049;
+}
+
+.zero {
+    grid-column: span 2;
 }
